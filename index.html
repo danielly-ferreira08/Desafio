@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Desafio</title>
+	<style type="text/css">
+
+#body{
+	background-color: #ffcccc;
+	height: 650px;
+}		
+
+#circulo{
+      width: 300px;
+      height: 300px;
+    border-radius: 50%;
+    background-color: #1abc9c;
+    margin-left: auto;
+    margin-right: auto;    
+    display: block;
+
+}
+#texto{
+	font-size: 40px;
+	width: 50%;
+	margin:0 auto;
+	text-align: center;
+	padding: 30px;
+	
+}
+#botao{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 15px;
+
+}
+.bnt1{
+   font-size: 15px;
+   text-transform: uppercase;
+   font-weight: 700;
+   border: none;
+   padding: 10px;
+   cursor: pointer;
+   background-color: green; 
+   margin-right: 5px;  
+    
+   
+   
+}
+.bnt1-green:hover{
+     background: green;
+     color: #fff;
+     box-shadow:0 5px 0 #006000;
+}
+.bnt1-green:active{
+     background: green;
+     color: #fff;
+     box-shadow:none;
+}
+.bnt2{
+   font-size: 15px;
+   text-transform: uppercase;
+   font-weight: 700;
+   border: none;
+   padding: 10px;
+   cursor: pointer;
+   background-color: red;   
+   
+
+   
+}
+.bnt2-red:hover{
+     background: red;
+     color: #fff;
+     box-shadow:0 5px 0 #c0392b;
+}
+.bnt2-red:active{
+     background: red;
+     color: #fff;
+     box-shadow:none;
+}
+.barra{
+	height: 20px;
+	width: 10px;
+	margin-top: 10px;
+	
+}
+
+#barras{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	flex-direction: column;
+	font-size: 20px;
+
+
+}
+
+#barra1{
+	background-color: green;
+}
+
+#barra2{
+	background-color: red;
+}
+
+</style>
+</head>
+
+<body>
+	<div id="body">
+
+ <div id="circulo">
+      <div id="texto"> 
+      	Sorvete é melhor que Gelato?
+ 	   
+ </div>
+ </div>
+
+ <div id="botao">
+ 	<button class="bnt1 bnt1-green" onclick="clique(1)"> SIM </button>
+    <button class="bnt2 bnt2-red" onclick="clique(0)"> NÃO </button>
+</div>
+   <h2><center>  Resultado </center></h2>
+   
+  <div id="barras">
+  	Sim
+  	<div class="barra" id="barra1" onclick="clique(0)"></div>
+  	Não
+  	<div class="barra" id="barra2" onclick="clique(0)"></div>
+  	</div>
+</div>
+
+<script type="text/javascript">
+	var clqs = 1
+	var clqn = 1 
+
+   function clique(receberValor){
+   if(receberValor == 1) {
+   		clqs +=1; 
+   		document.getElementById('barra1').style.width= (clqs*10)+"px";
+   		document.getElementById('barra1').innerHTML = clqs-1;
+
+   }
+   else if(receberValor==0){
+   	clqn +=1;
+   	document.getElementById('barra2').style.width= (clqn*10)+"px";
+   	document.getElementById('barra2').innerHTML = clqn-1;
+   }
+}
+
+   
+
+
+
+</script>
+
+</body>
+
+</html>
